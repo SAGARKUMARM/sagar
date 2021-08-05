@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Own Editor</title>
+    <style>
+        textarea{
+        width:100%;
+        height:700px;
+        color:white;
+        background-color:black;
+        }
+        #code-output{
+        width:100%;
+        height:700px;
+         
+        }
+        button{
+            height: 45px;
+            width: 30%;
+            border: 4px solid red;
+            font-size: 2.5em;
+            color: blue;
+        }
+        .mode{
+        width:100%;
+        height:700px;
+        color:black;
+        background-color:white;   
+        }
+        button:hover{
+            opacity: 0.6;
+            background-color: red;
+        }
+        
+        #code{
+            border:2px solid rgb(255, 0, 13) ;
+        }
+        #code-output{
+            border:2px solid rgb(195, 0, 255) ;  
+        }
+    </style>
+</head>
+<body>
+  <textarea id="code">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Own Editor</title>
+</head>
+<body>
+
+</body>
+</html>
+  </textarea>
+  <button onclick="run()">Run</button>
+  <button onclick="mode()">Mode</button>
+  <button onclick="document.getElementById('code').value=''">Clear</button>
+ 
+  <iframe id="code-output"></iframe> 
+  <script>
+      function run(){
+          var tc =document.getElementById("code").value;
+          document.getElementById("code-output").srcdoc=tc;
+      }
+  </script>
+  <script>
+      function mode(){
+      var Switch=document.getElementById("code");
+      Switch.classList.toggle("mode");
+      }
+  </script>
+</body>
+</html>
